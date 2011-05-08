@@ -1,0 +1,32 @@
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: "proxima-nova-1","proxima-nova-2", Helvetica, sans-serif;
+}
+a {
+  color: #981a1a;
+}
+p {
+  font-size: 14px;
+}
+p#intro {
+  margin-top: 270px;
+  padding: 0 10px;
+}
+#top {
+  background-color: #981a1a;
+  height: 5px;
+}
+h1#logo {
+  color: #000;
+  font-size: 52pt;
+  font-family: "league-gothic-1","league-gothic-2", Helvetica, sans-serif;
+  letter-spacing: -0.04em;
+  margin: 0;
+  margin-top: 253px;
+  text-align: right;
+  text-transform: lowercase;
+}
+h1#logo span {
+  color: #981a1a;
+}
