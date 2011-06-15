@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta charset="utf-8"/>
 <meta content="Negative Code is a Ruby design &amp; development studio in Denver, Colorado. Less code is better code." name="description"/>
 <title>{{ page.title }}</title>
+<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 <link rel="stylesheet" href="/stylesheets/reset.css"/>
 <link rel="stylesheet" href="/stylesheets/text.css"/>
 <link rel="stylesheet" href="/stylesheets/960.css"/>
@@ -21,7 +22,7 @@
   })();
 </script>
 </head>
-<body>
+<body id="{{ page.page_id }}">
   <div id="top"></div>
   <div class="container_12">
   {{ content }}
