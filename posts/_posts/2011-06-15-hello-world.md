@@ -3,7 +3,7 @@ layout: post
 title: Hello World!
 author: David Graham
 ---
-We started Negative Code because we love building software and helping customers.  In the past, we've built and deployed enterprise systems at some of the world's biggest companies and life-critical emergency response software for large city governments.  But building complex systems isn't the only way to go.  Elegant, well defined products acting together are easier to understand and maintain.  We believe less code is better code.
+We started Negative Code because we love building software and helping customers.  In the past, we've built and deployed enterprise systems at some of the world's biggest companies. But building complicated systems isn't the only way to go.  Elegant, well defined products acting together are easier to understand and maintain.  We believe less code is better code.
 
 ## Design
 Everything at Negative Code starts with design.  Before we write a line of code we're designing the product.  This isn't just the user interface design.  We craft the full user experience, from installing the product, to programmer APIs, all the way through to support calls.  It definitely shows when a product has been painstakingly designed.  That's the only kind of software we make.
