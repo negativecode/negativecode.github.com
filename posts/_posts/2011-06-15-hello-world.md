@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Hello World!
-author: David Graham & Chris Johnson
+author: David Graham
 ---
-# [{{ page.title }}]({{ page.url }})
 We started Negative Code because we love building software and helping customers.  In the past, we've built and deployed enterprise systems at some of the world's biggest companies and life-critical emergency response software for large city governments.  But building complex systems isn't the only way to go.  Elegant, well defined products acting together are easier to understand and maintain.  We believe less code is better code.
 
 ## Design

@@ -3,7 +3,6 @@ layout: post
 title: Vines XMPP Server 0.2.0 Released
 author: David Graham
 ---
-# [{{ page.title }}]({{ page.url }})
 We're proud to announce the second preview release of the [Vines XMPP server](http://www.getvines.com)!  Along with many bug fixes and improvements, there are three important new features in this release.
 
 ## File Transfers
