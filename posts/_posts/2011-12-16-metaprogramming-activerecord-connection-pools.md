@@ -71,3 +71,5 @@ And that's just one of our query methods.  We can wrap the others just as easily
 
 Metaprogramming is a pretty big hammer to use to solve a simple connection pool problem.  But, define_method is a nice tool here, because it provides a simple way to write custom storage code without accidentally losing connections or blocking the EventMachine reactor thread.
 
+\- {{ page.author }}
+<br/>{{ page.date | date_to_string }}
