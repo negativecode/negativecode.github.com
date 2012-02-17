@@ -1,0 +1,10 @@
+<a id="subscribe" href="http://feeds.feedburner.com/negativecode" rel="alternate" type="application/rss+xml">Subscribe via RSS</a>
+<h2 class="post-index-title">Recent Entries</h2>
+<ul class="post-index">
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date_to_string }}</span>
+    </li>
+  {% endfor %}
+</ul>

@@ -2,17 +2,9 @@
 <body id="{{ page.page_id }}">
   <div id="top"></div>
   <div class="container_12">
-    <div class="grid_4">
+    <div class="grid_4" id="alpha">
       <h1 id="logo"><a href="/">Negative <span>Code</span></a></h1>
-      <h2 class="post-index-title">Recent Entries</h2>
-      <ul class="post-index">
-        {% for post in site.posts %}
-          <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <span>{{ post.date | date_to_string }}</span>
-          </li>
-        {% endfor %}
-      </ul>
+      {% include entries.html %}
     </div>
     <div class="grid_6">
       <p id="intro">
