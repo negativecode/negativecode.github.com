@@ -10,10 +10,12 @@ Thanks to EventMachine, a single Vines chat server can handle plenty of traffic.
 
 I'll write more in-depth about how the clustering feature works in the future.  For now, it's easy to get started by adding this snippet to your config file.
 
-    cluster do
-      host 'redis.wonderland.lit'
-      port 6379
-    end
+{% highlight ruby %}
+cluster do
+  host 'redis.wonderland.lit'
+  port 6379
+end
+{% endhighlight %}
 
 Point two or more Vines servers to the same Redis database and you're done!
 

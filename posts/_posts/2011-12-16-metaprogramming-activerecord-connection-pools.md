@@ -12,14 +12,16 @@ and finding the
 [right class](http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html)
 to use inside ActiveRecord, it's actually pretty simple.
 
-    def save_user(user)
-      ActiveRecord::Base.connection_pool.with_connection do
-        found = User.find_by_jid(user.jid)
-        found.name = user.name
-        found.password = user.password
-        found.save
-      end
-    end
+{% highlight ruby %}
+def save_user(user)
+  ActiveRecord::Base.connection_pool.with_connection do
+    found = User.find_by_jid(user.jid)
+    found.name = user.name
+    found.password = user.password
+    found.save
+  end
+end
+{% endhighlight %}
 
 ActiveRecord's with_connection method yields a database connection from its pool to the block.  When the block finishes, the connection is automatically checked back into the pool, avoiding connection leaks.
 
@@ -37,16 +39,18 @@ The storage layer in Vines is meant to be extended for custom database layouts, 
 
 Using alias_method in concert with define_method is a simple technique for decorating a method with extra behavior. This takes an existing method, renames it, and redefines it with some extra behavior wrapped around a call to the original implementation.
 
-    def self.with_connection(method)
-      old = "_with_connection_#{method}"
-      alias_method old, method
-      define_method method do |*args|
-        ActiveRecord::Base.connection_pool.with_connection do
-          method(old).call(*args)
-        end
-      end
-      defer(method)
+{% highlight ruby %}
+def self.with_connection(method)
+  old = "_with_connection_#{method}"
+  alias_method old, method
+  define_method method do |*args|
+    ActiveRecord::Base.connection_pool.with_connection do
+      method(old).call(*args)
     end
+  end
+  defer(method)
+end
+{% endhighlight %}
 
 In this case, the new method calls the original inside an ActiveRecord with_connection block.  This makes sure that connections are released back to the pool every time we use an ActiveRecord model in our methods.
 
@@ -59,13 +63,15 @@ We won't get into the defer implementation here, but if you're interested,
 
 Now that we have the with_connection decorator written, we can use it to wrap all other methods that talk to ActiveRecord. Here's the save_user implementation using the decorator rather than dealing with ActiveRecord pools directly.
 
-    def save_user(user)
-      found = User.find_by_jid(user.jid)
-      found.name = user.name
-      found.password = user.password
-      found.save
-    end
-    with_connection :save_user
+{% highlight ruby %}
+def save_user(user)
+  found = User.find_by_jid(user.jid)
+  found.name = user.name
+  found.password = user.password
+  found.save
+end
+with_connection :save_user
+{% endhighlight %}
 
 And that's just one of our query methods.  We can wrap the others just as easily and consolidate connection pool handling in one place.
 
