@@ -1,2 +1,5 @@
 This is the negativecode.com website.
 
+$ script/bootstrap
+$ script/server
+

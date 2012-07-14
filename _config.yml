@@ -1,3 +1,4 @@
 permalink: pretty
 pygments: true
-exclude: [Gemfile, Gemfile.lock, vendor, bin]
+exclude: [README, Gemfile, Gemfile.lock, vendor, bin, script]
+
