@@ -147,7 +147,8 @@ figure.screenshot figcaption {
   text-align: right;
 }
 #subscribe {
-  background: #f8f8f8 url(http://www.feedburner.com/fb/images/pub/feed-icon16x16.png) 3px 3px no-repeat;
+  background: #f8f8f8 url(http://www.feedburner.com/fb/images/pub/feed-icon32x32.png) 3px 3px no-repeat;
+  background-size: 16px;
   font-size: 11px;
   padding: 5px 4px 0 23px;
   position: absolute;
