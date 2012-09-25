@@ -5,8 +5,8 @@ author: David Graham
 ---
 We're proud to announce the fourth preview release of the [Vines XMPP server](http://www.getvines.org)!  In addition to bug fixes and performance improvements, there are three important new features in this release.
 
-## Clusters&mdash;Two Servers Are Better Than One
-Thanks to EventMachine, a single Vines chat server can handle plenty of traffic. But eventually, we'll need a second server (or more) to handle higher loads and provide high-availability should one server go down.  In this release, several Vines servers can cluster together, using Redis to route messages among themselves.
+## Two Servers Are Better Than One
+Thanks to EventMachine, a single Vines chat server can handle plenty of traffic. But eventually, we'll need a second server (or more) to handle higher loads and provide high-availability should one server fail.  In this release, several Vines servers can cluster together, using Redis to route messages among themselves.
 
 I'll write more in-depth about how the clustering feature works in the future.  For now, it's easy to get started by adding this snippet to your config file.
 
