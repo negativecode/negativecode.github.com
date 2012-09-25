@@ -37,15 +37,17 @@ The storage layer in Vines is meant to be extended for custom database layouts, 
 
 ## Metaprogramming to the Rescue
 
-Using alias_method in concert with define_method is a simple technique for decorating a method with extra behavior. This takes an existing method, renames it, and redefines it with some extra behavior wrapped around a call to the original implementation.
+Using
+[instance_method](http://www.ruby-doc.org/core-1.9.3/Module.html#method-i-instance_method)
+together with
+[define_method](http://www.ruby-doc.org/core-1.9.3/Module.html#method-i-define_method) is a simple technique for decorating a method with extra behavior. This takes an existing method and redefines it with some extra behavior wrapped around a call to the original implementation.
 
 {% highlight ruby %}
 def self.with_connection(method)
-  old = "_with_connection_#{method}"
-  alias_method old, method
+  old = instance_method(method)
   define_method method do |*args|
     ActiveRecord::Base.connection_pool.with_connection do
-      method(old).call(*args)
+      old.bind(self).call(*args)
     end
   end
   defer(method)
@@ -75,7 +77,7 @@ with_connection :save_user
 
 And that's just one of our query methods.  We can wrap the others just as easily and consolidate connection pool handling in one place.
 
-Metaprogramming is a pretty big hammer to use to solve a simple connection pool problem.  But, define_method is a nice tool here, because it provides a simple way to write custom storage code without accidentally losing connections or blocking the EventMachine reactor thread.
+Metaprogramming is a pretty big hammer to use to solve a simple connection pool problem.  But define_method is a nice tool here, because it provides a simple way to write custom storage code without accidentally losing connections or blocking the EventMachine reactor thread.
 
 \- {{ page.author }}
 <br/>{{ page.date | date_to_string }}
