@@ -3,20 +3,23 @@ layout: post
 title: Why I Love Programming in Ruby
 author: David Graham
 ---
-A friend asked me recently why I enjoy programming in Ruby so much and I thought I'd share my thoughts here, with you, as well.  I'll focus on one piece of sample code, letting Ruby do most of the talking, that highlights some of my favorite features.
+A friend asked me recently why I enjoy programming in Ruby so much and I thought
+I'd share my thoughts here as well.  We'll focus on one piece of sample code, letting Ruby do most of the talking, that highlights some of my favorite features.
 
 This example comes from some real code I was working on.  We'll refactor it step by step until we get something we're proud of.  Each time through, we'll improve the code by using more and more of Ruby's features.
 
 ## Split an Array Into Keys and Values
 
-Our goal is to write a split method that accepts an array and partitions it into two different arrays of keys and values.  The unit test for split would look something like this.
+Our goal is to write a split method that accepts an array and partitions it into
+two different arrays of keys and values.  The
+[minitest](https://github.com/seattlerb/minitest) spec for split would look something like this.
 
 {% highlight ruby %}
-def test_split
+it 'splits an array into keys and values' do
   params = ['foo', 12, 'bar', 42]
   keys, values = split(params)
-  assert_equal ['foo', 'bar'], keys
-  assert_equal [12, 42], values
+  keys.must_equal ['foo', 'bar']
+  values.must_equal [12, 42]
 end
 {% endhighlight %}
 
