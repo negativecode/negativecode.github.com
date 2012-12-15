@@ -16,3 +16,6 @@ We don't have managers at GitHub and we don't tell each other what to work on.  
 And please use the animated gif support for
 [good](https://f.cloud.github.com/assets/122102/14620/4363f71c-4657-11e2-9928-00b35912aa96.gif), not
 [evil](https://f.cloud.github.com/assets/122102/14621/436bcdde-4657-11e2-8b35-28d801e9b17e.gif).
+
+\- {{ page.author }}
+<br/>{{ page.date | date_to_string }}
