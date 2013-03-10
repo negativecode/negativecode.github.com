@@ -1,6 +1,6 @@
 ---
 layout: post
-title: It&apos;s Better to Work Together Than Alone
+title: It’s Better to Work Together Than Alone
 author: David Graham
 ---
 Last week we shipped [image attachments](https://github.com/blog/1347-issue-attachments) on GitHub issues, a feature that I've personally wanted for a long time.  We worked on it for just over six weeks and shipped over 25 pull requests before turning it loose for everyone to use.
